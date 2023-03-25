@@ -1,3 +1,5 @@
+
+
 const ProductsArr = [
   {
     id:1,
@@ -35,5 +37,7 @@ const ProductsArr = [
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
   },
 ];
+
+
 
 module.exports=ProductsArr

@@ -6,7 +6,7 @@ function Cart() {
   let [loadedCart,loadedSetCart]=useState([]);
   let [filterCart,setfilterCart]=useState([]);
   let loginUser=localStorage.getItem('user');
-  let {setCart}=CartState();
+  let {setCart,cart}=CartState();
 
   const  fetchCartHandler = useCallback(async ()=>{
     try {
@@ -22,8 +22,8 @@ function Cart() {
           imageUrl:data[key].imageUrl,
           user:data[key].user
         });
-      loadedSetCart(loadCartItem);
     }
+    loadedSetCart(loadCartItem);
       
 
       let filterArr=loadCartItem.filter((val)=>{
@@ -40,7 +40,7 @@ function Cart() {
       console.log(error);
     }
 
-  },[])
+  },[cart])
 
   useEffect(()=>{
     fetchCartHandler();

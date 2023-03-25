@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartState } from "../../store/cartcontext";
+import ProductsArr from "../assets/productList";
 import "./products.css";
 function Products() {
   let navigate=useNavigate();
@@ -9,10 +10,26 @@ function Products() {
   let user=localStorage.getItem('user');
 
   let handleAddtoCart=async (val)=>{
-    if(cart.includes(val)){
+    console.log(val);
+    console.log(cart);
+
+    let flag=false
+
+    for(let i=0;i<cart.length;i++){
+      if(cart[i].title == val.title){
+        flag=true;
+        break;
+      }
+
+    }
+    
+    if(flag){
       alert('item already added');
       return;
     }else{
+      // console.log("dsc");
+      // console.log(cart);
+      // console.log(val);
           setCart([...cart,val]);
         // send data to firebase
         const response = await fetch('https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item.json', {
@@ -24,6 +41,7 @@ function Products() {
           });
           const data = await response.json();
           // console.log(data);
+
         }
       }
 
