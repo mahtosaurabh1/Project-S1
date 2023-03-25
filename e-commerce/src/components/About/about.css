@@ -1,0 +1,16 @@
+.about-container{
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem;
+    color: white;
+    margin-top: 6rem;
+}
+p{
+    height: 40%;
+    width: 60%;
+}
+.about-container img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}

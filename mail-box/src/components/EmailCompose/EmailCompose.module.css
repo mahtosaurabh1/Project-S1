@@ -1,0 +1,99 @@
+.emailcompose {
+    max-width: 900px;
+    position: relative;
+    top:5rem;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .formgroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"],
+  input[type="text"],
+  textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    resize: none;
+  }
+  
+  input[type="email"],
+  input[type="text"] {
+    margin-bottom: 10px;
+  }
+
+  .container{
+    /* border:2px solid black; */
+    resize: vertical;
+    min-height: 180px;
+    background-color: #fffdfd;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom:10px;
+    
+  }
+  
+ 
+  
+  button[type="submit"] {
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #052c56;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .emailcompose {
+      max-width: 100%;
+      padding: 10px;
+    }
+    
+    .formgroup {
+      margin-bottom: 10px;
+    }
+    
+    input[type="email"],
+    input[type="text"],
+    textarea {
+      font-size: 14px;
+    }
+    
+    textarea {
+      min-height: 150px;
+    }
+    
+    button[type="submit"] {
+      font-size: 20px;
+    }
+  }

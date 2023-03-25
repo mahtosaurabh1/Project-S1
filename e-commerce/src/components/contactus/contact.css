@@ -1,0 +1,42 @@
+.input-grp input{
+    height: 2rem;
+    width: 17rem;
+    font-size: 1.2rem;
+    padding-left: 3px;
+    margin: 3px;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+}
+ 
+ .contact-cont {
+   display: flex;
+   flex-direction: column;
+   color: white;
+   width: 25rem;
+   height: 25rem;
+   border: 2px solid blueviolet;
+   align-items: center;
+   border-radius:2rem ;
+   margin-left: 20%;
+   margin-top: 2rem;
+ }
+
+ .btn-cont {
+   display: flex;
+   flex-direction: column;
+   margin-top: 1rem;
+ 
+ }
+ .btn-cont button {
+   width: 17.6rem;
+   height: 2rem;
+   margin: 0.1rem;
+   cursor: pointer;
+   border-radius: 0.5rem;
+     border: none;
+     outline: none;
+ }
+ .login-cont h1 {
+   text-decoration: underline;
+ }

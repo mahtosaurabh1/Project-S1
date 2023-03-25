@@ -1,0 +1,40 @@
+.product-container{
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 18rem;
+    height: 20rem;
+    border: 2px solid blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 3rem;
+    color:white ;
+}
+.btn-price-container{
+display: flex;
+gap: 5rem;
+}
+.btn{
+    width: 8rem;
+    height: 2rem;
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.card img{
+    width: 13rem;
+    height: 13rem;
+    border-radius: 5px;
+}

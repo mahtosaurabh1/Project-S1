@@ -1,0 +1,10 @@
+.sent-container{
+    margin-top: 5rem;
+  }
+.one-sent-container{
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    gap: 5px;
+  }

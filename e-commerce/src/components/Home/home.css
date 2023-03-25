@@ -1,0 +1,26 @@
+.head{
+    background-color: grey;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.list-item-container{
+    border: 2px solid violet;
+    width: 40%;
+    padding: 3rem;
+    border-radius: 5px;
+    margin-left: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 4rem;
+}
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}

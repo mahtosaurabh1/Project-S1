@@ -1,0 +1,63 @@
+.email-container {
+    position:relative;
+    top:5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .email-container:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .email-header {
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 10px;
+  }
+  
+  .email-subject {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .email-sender {
+    font-style: italic;
+  }
+  .composebutton{
+    position: relative;
+    top:2rem;
+    margin-left: 2rem;
+    font-size: larger;
+    margin-bottom:2rem;
+    
+  }
+
+
+
+ .welcome{
+  padding-top:30px;
+  margin-top: 6rem;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+  
+.inbox-container{
+  margin-top: 5rem;
+}
+.one-inbox-container{
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  gap: 5px;
+  margin-left: 6px;
+}
+.action-btn{
+  display: flex;
+  gap: 5px;
+}

@@ -1,0 +1,76 @@
+.expenses {
+    width: 100%;
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding: 2rem;
+      background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-left: 25%;
+    margin-top: 8rem;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #464646;
+    margin: 0.5rem;
+  }
+  
+   input, select {
+    flex: 3;
+    font: inherit;
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+   input:focus {
+    outline: none;
+    border-color: #4f005f;
+    background: #f6dbfc;
+  }
+  
+  .single-item{
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.1rem;
+    width: 90%;
+    margin-left: 5%;
+  }
+.action-btn{
+  display: flex;
+  gap: 5px;
+       
+}
+.actions .btn{
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: rgb(53, 53, 71);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  height: 2rem;
+  width: 6rem;
+
+}
+.theme{
+  background-color: black;
+  color: white;
+}
+
+
+

@@ -1,0 +1,45 @@
+.cart-container{
+    position: relative;
+    margin-top: 2.5rem;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.title {
+  display: flex;
+}
+.title img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  color: black;
+  color: white;
+  border-radius: 5px;
+}
+.input-btn-container input {
+    width: 2rem;
+    margin: 5px;
+    height: 1.3rem;
+    outline: none;
+    border: 2px solid aqua;
+    border-radius: 5px;
+}
+.input-btn-container button {
+    width: 5rem;
+    height: 1.8rem;
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
