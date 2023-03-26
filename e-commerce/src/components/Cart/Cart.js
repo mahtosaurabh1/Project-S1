@@ -61,8 +61,8 @@ let handleRemoveFromCart=async (id)=>{
    }
   return (
     <div className="cart-container">
+       <h3>Total Price ${totalAmt}</h3>
       <table>
-        <h3>Total Price ${totalAmt}</h3>
         <thead>
         <tr>
             <th><h2>Item</h2></th>

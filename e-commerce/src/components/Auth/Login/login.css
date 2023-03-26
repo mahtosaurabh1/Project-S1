@@ -18,8 +18,13 @@
    border: 2px solid blueviolet;
    align-items: center;
    border-radius:2rem ;
-   margin-left: 20%;
+   /* margin-left: 20%; */
    margin-top: 2.3rem;
+ }
+ .parent-login-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
  }
 
  .btn-cont {

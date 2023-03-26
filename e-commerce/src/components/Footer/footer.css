@@ -4,6 +4,7 @@
   justify-content: center;
   margin-top: 8rem;
   color: white;
-  border: 2px solid blueviolet;
+  /* border: 2px solid blueviolet; */
+  background-color: violet;
   /* padding: 0.1rem; */
 }

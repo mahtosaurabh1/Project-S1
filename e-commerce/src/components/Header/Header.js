@@ -21,7 +21,7 @@ function Header() {
     let cartItem=await fetch('https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item.json');
     let  data=await cartItem.json();
     // console.log(data);
-    
+
     let loadCartItem=[];
     for(let key in data){
       if(loginUser == data[key].user){

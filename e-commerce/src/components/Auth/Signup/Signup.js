@@ -51,7 +51,8 @@ function Signup() {
        }
 
   return (
-    <div className="singup-cont">
+    <div className="parent-singup-container">
+      <div className="singup-cont">
       <h1>Create-Account</h1>
         <div className="email input-grp">
             <div>Email</div>
@@ -65,6 +66,7 @@ function Signup() {
      {isLoading && <p>loading...</p>}
         {!isLoading && <button onClick={signupHandler}>Signup</button>}
      </div>
+    </div>
     </div>
   )
 }

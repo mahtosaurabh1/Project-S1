@@ -21,7 +21,8 @@ function Contact() {
             setPhno('')
     }
   return (
-    <div className="contact-cont">
+   <div className="parentcontact-container">
+     <div className="contact-cont">
       <h1>Contact-Us</h1>
         <div className="name input-grp">
             <div>Name</div>
@@ -39,6 +40,7 @@ function Contact() {
         <button onClick={submitHandler}>Submit</button>
         </div>
     </div>
+   </div>
   )
 }
 

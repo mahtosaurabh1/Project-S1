@@ -5,19 +5,43 @@ import "./preview.css";
 function Preview() {
   let param = useParams();
   let { products, cart, setCart } = CartState();
+  let user=localStorage.getItem('user');
 
-  let singlePrdct = products.filter((val) => {
-    // console.log(typeof(param.id),typeof(val.id));
+  let singlePrdct = products.filter((val) =>{
     return val.id == param.id;
   });
 
-  let handleAddtoCart=(val)=>{
-    if(cart.includes(val)){
+  let handleAddtoCart=async (val)=>{
+
+    let flag=false
+
+    for(let i=0;i<cart.length;i++){
+      if(cart[i].title == val.title){
+        flag=true;
+        break;
+      }
+
+    }
+    
+    if(flag){
       alert('item already added');
       return;
-    }
-    setCart([...cart,val]);
-  }
+    }else{
+          setCart([...cart,val]);
+        // send data to firebase
+        const response = await fetch('https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item.json', {
+            method: 'POST',
+            body: JSON.stringify({...val,user},),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+          const data = await response.json();
+          // console.log(data);
+
+        }
+      }
+
 
   return (
     <div className="preview-container">

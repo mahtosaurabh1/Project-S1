@@ -10,8 +10,6 @@ function Products() {
   let user=localStorage.getItem('user');
 
   let handleAddtoCart=async (val)=>{
-    console.log(val);
-    console.log(cart);
 
     let flag=false
 
@@ -27,9 +25,6 @@ function Products() {
       alert('item already added');
       return;
     }else{
-      // console.log("dsc");
-      // console.log(cart);
-      // console.log(val);
           setCart([...cart,val]);
         // send data to firebase
         const response = await fetch('https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item.json', {

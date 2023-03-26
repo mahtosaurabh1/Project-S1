@@ -50,7 +50,8 @@ function Login() {
        }
 
   return (
-    <div className="login-cont">
+  <div className="parent-login-container">
+      <div className="login-cont">
       <h1>Login-Account</h1>
         <div className="email input-grp">
             <div>Email</div>
@@ -64,6 +65,7 @@ function Login() {
          {loading ?<p>Loading...</p>:<button onClick={loginHandler}>Login</button>}
          </div>
     </div>
+  </div>
   )
 }
 
