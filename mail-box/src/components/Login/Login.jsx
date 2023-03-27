@@ -81,7 +81,6 @@ function Login() {
         <button onClick={loginHandler}>Login</button>
       )}
 
-      <button><Link className="Link" to="/singup">SingUp</Link></button>
       </div>
     </div>
   );

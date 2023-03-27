@@ -1,5 +1,5 @@
 import React, {  useContext, useState } from 'react'
-import { Link} from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import AuthContext from '../../store/auth-context';
 import './signup.css'
 function Signup() {
@@ -8,6 +8,7 @@ function Signup() {
     const [password,setPassword]=useState();
     const [confPassword,setconfPassword]=useState();
     let authCtx=useContext(AuthContext);
+    let navigate=useNavigate();
 
     const signupHandler=(e)=>{
         e.preventDefault();
@@ -40,6 +41,7 @@ function Signup() {
             }) 
            }
          }).then((data)=>{
+          navigate('/email-compose')
           authCtx.login(data.idToken);
          }).catch((err)=>{
           alert(err.message)
@@ -69,7 +71,6 @@ function Signup() {
         {isLoading && <p>loading...</p>}
         {!isLoading && <button onClick={signupHandler}>Sing-Up</button>}
 
-        <button><Link className="Link" to='/login'>Login</Link></button>
     </div>
   )
 }
