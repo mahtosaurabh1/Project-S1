@@ -40,8 +40,10 @@ function Login() {
             }) 
            }
          }).then((data)=>{
-          // console.log(data);
           authCtx.login(data.idToken);
+
+          
+
           navigate('/product')
           
          }).catch((err)=>{

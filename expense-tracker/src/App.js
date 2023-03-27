@@ -7,6 +7,7 @@ import Profile from "./components/Profile/Profile";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 import Expenses from "./components/Expenses/Expenses";
 import Home from "./components/Home/Home/Home";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path="/singup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile' element={<ProtectedRoute Component={Profile}/>}/>
         <Route path='/forget-password' element={<ForgetPassword/>}/>
-        <Route path='/expenses' element={ <Expenses/>}/>
+        <Route path='/expenses' element={ <ProtectedRoute Component={Expenses}/>}/>
       </Routes>
     </Router>
   );

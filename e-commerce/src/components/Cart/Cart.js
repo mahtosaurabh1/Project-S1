@@ -61,7 +61,9 @@ let handleRemoveFromCart=async (id)=>{
    }
   return (
     <div className="cart-container">
-       <h3>Total Price ${totalAmt}</h3>
+       {filterCart.length != 0 ? 
+      <div  className="cart-container">
+         <h3>Total Price ${totalAmt}</h3>
       <table>
         <thead>
         <tr>
@@ -92,6 +94,7 @@ let handleRemoveFromCart=async (id)=>{
           })
          }
       </table>
+      </div>:<h3>Cart is empty</h3>}
     </div>
   )
 }

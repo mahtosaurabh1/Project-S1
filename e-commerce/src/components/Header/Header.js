@@ -37,8 +37,9 @@ function Header() {
   setCart(loadCartItem);
   }
   useEffect(()=>{
+    console.log('a');
     fetchCartData();
-  },[])
+  },[isLogin])
 
   
   return (
