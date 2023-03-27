@@ -12,6 +12,7 @@ import Preview from "./components/Preview/Preview";
 import { AuthContextProvider } from "./store/authcontext";
 import Signup from "./components/Auth/Signup/Signup";
 import Login from "./components/Auth/Login/Login";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -20,13 +21,14 @@ function App() {
         <Header />
         <Routes>
           <Route path="/about" element={<About />} />
-          <Route path="/product" element={ <Products/>} />
+          <Route path="/product" element={ <ProtectedRoute Component={Products}/>} />
           <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<ProtectedRoute Component={Cart} />} />
           <Route path="/contactus" element={<Contact />} />
-          <Route path="/preview/:id" element={<Preview />} />
+          <Route path="/preview/:id" element={<ProtectedRoute Component={Preview} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/*' element={<Navigate to='/'/>} />
         </Routes>
         <Footer />
       </Router>
