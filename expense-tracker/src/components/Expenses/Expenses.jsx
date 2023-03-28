@@ -10,8 +10,9 @@ function Expenses() {
     const [flag,setFlag]=useState(true);
     const [id,setId]=useState('');
     const [totalPrice,setTotalPrice]=useState(0);
-    const [tChange,setTChange]=useState(true)
+    const [tChange,setTChange]=useState(true);
 
+    let user=localStorage.getItem('user');
 
 
     let fetchDataFromServer= async ()=>{
@@ -20,13 +21,16 @@ function Expenses() {
          let loadItem=[];
          let total=0;
          for(let key in data){
-           loadItem.push({
-               id:key,
-               money:data[key].money,
-               description:data[key].description,
-               category:data[key].category
-             });
-             total += Number(data[key].money);
+          if(user == data[key].loginUser){
+            loadItem.push({
+                id:key,
+                money:data[key].money,
+                description:data[key].description,
+                category:data[key].category,
+                user:data[key].user
+              });
+              total += Number(data[key].money);
+          }
          }
          setTotalPrice(total);
          setItems(loadItem);
@@ -44,6 +48,7 @@ function Expenses() {
                money:money,
                description:description,
                category:category,
+               loginUser:user,
                returnSecureToken:true
             }),
             headers:{
@@ -86,6 +91,7 @@ function Expenses() {
                money:money,
                description:description,
                category:category,
+               loginUser:user,
                returnSecureToken:true
             }),
             headers:{

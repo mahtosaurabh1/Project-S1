@@ -71,7 +71,6 @@ function Signup() {
         {isLoading && <p>loading...</p>}
         {!isLoading && <button onClick={signupHandler}>Sing-Up</button>}
 
-        <button><Link className="Link" to='/login'>Login</Link></button>
     </div>
   )
 }
