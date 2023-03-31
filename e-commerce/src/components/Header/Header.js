@@ -5,69 +5,85 @@ import { CartState } from "../../store/cartcontext";
 import "./header.css";
 
 function Header() {
+  let { cart, setCart } = CartState();
+  let navigate = useNavigate();
+  let authCtx = useContext(AuthContext);
+  let isLogin = authCtx.isLoggedIn;
+  let loginUser = localStorage.getItem("user");
 
-  let { cart ,setCart} = CartState();
-  let navigate=useNavigate();
-  let authCtx=useContext(AuthContext);
-  let isLogin=authCtx.isLoggedIn;
-  let loginUser=localStorage.getItem('user');
-
-  let logOutHandler=()=>{
+  let logOutHandler = () => {
     authCtx.logout();
-    navigate('/login')
-  }
+    navigate("/login");
+  };
 
-  async function fetchCartData(){
-    let cartItem=await fetch('https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item.json');
-    let  data=await cartItem.json();
+  async function fetchCartData() {
+    let cartItem = await fetch(
+      "https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item.json"
+    );
+    let data = await cartItem.json();
     // console.log(data);
 
-    let loadCartItem=[];
-    for(let key in data){
-      if(loginUser == data[key].user){
-      loadCartItem.push({
-        id:key,
-        title:data[key].title,
-        price:data[key].price,
-        imageUrl:data[key].imageUrl,
-        user:data[key].user
-      });
+    let loadCartItem = [];
+    for (let key in data) {
+      if (loginUser == data[key].user) {
+        loadCartItem.push({
+          id: key,
+          title: data[key].title,
+          price: data[key].price,
+          imageUrl: data[key].imageUrl,
+          user: data[key].user,
+        });
+      }
     }
+    setCart(loadCartItem);
   }
-  setCart(loadCartItem);
-  }
-  useEffect(()=>{
-    console.log('a');
+  useEffect(() => {
+    console.log("a");
     fetchCartData();
-  },[isLogin])
+  }, [isLogin]);
 
-  
   return (
     <div className="header">
-        <NavLink to="/" className='link'>
+      <div className="product-header-container">
+        <NavLink to="/" className="link">
           Home
         </NavLink>
-        
-        <NavLink to="/about" className='link' >
+
+        <NavLink to="/about" className="link">
           About
         </NavLink>
-        <NavLink to="/contactus" className='link'>
+        <NavLink to="/contactus" className="link">
           Contact-Us
         </NavLink>
-        {isLogin && <>
-          <NavLink to="/product" className='link' >
-          Store
-        </NavLink>
-        <NavLink to="/cart" className='link'>
-            <div>Cart {cart.length}</div>
-          </NavLink>
-        </>}
+        {isLogin && (
+          <>
+            <NavLink to="/product" className="link">
+              Store
+            </NavLink>
+            <NavLink to="/cart" className="link">
+              <div>Cart {cart.length}</div>
+            </NavLink>
+          </>
+        )}
+      </div>
 
-          {!isLogin && <><NavLink to='/login' className='link'><div>Login</div></NavLink>
-            <NavLink to='/signup' className='link' >Create Acount</NavLink></>}
-            {isLogin && <div className="link" onClick={logOutHandler}>Logout</div>}
-
-        
+      <div className="auth-container">
+        {!isLogin && (
+          <>
+            <NavLink to="/login" className="link">
+              <div>Login</div>
+            </NavLink>
+            <NavLink to="/signup" className="link">
+              Sign-Up
+            </NavLink>
+          </>
+        )}
+        {isLogin && (
+          <div className="link" onClick={logOutHandler}>
+            Logout
+          </div>
+        )}
+      </div>
     </div>
   );
 }
