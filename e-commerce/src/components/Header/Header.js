@@ -35,6 +35,7 @@ function Header() {
         });
       }
     }
+    console.log("a");
     setCart(loadCartItem);
   }
   useEffect(() => {

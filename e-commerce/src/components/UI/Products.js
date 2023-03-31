@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartState } from "../../store/cartcontext";
-import ProductsArr from "../assets/productList";
 import "./products.css";
 function Products() {
   let navigate=useNavigate();

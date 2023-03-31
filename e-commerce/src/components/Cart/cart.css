@@ -1,6 +1,6 @@
 .cart-container{
     position: relative;
-    margin-top: 2.5rem;
+    margin-top: 0.5rem;
     display:flex ;
     justify-content: center;
     align-items: center;
@@ -18,13 +18,17 @@
   border-radius: 50%;
 }
 
-table,
-th,
-td {
+table {
   border: 1px solid white;
-  color: black;
   color: white;
   border-radius: 5px;
+  border-right: none;
+  border-bottom: none;
+}
+th,td{
+  border-bottom: 2px solid white;
+  border-right: 1px solid white;
+
 }
 .input-btn-container input {
     width: 2rem;
@@ -34,7 +38,7 @@ td {
     border: 2px solid aqua;
     border-radius: 5px;
 }
-.input-btn-container button {
+.input-btn-container button{
     width: 5rem;
     height: 1.8rem;
     color: white;

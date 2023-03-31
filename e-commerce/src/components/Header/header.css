@@ -11,24 +11,28 @@
     flex-wrap: wrap;
 }
 .header:hover{
-    background-color: #9f63f4;
+    background-color: blueviolet;
 }
 .product-header-container{
     width: 75%;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    /* border:2px solid red; */
 }
 
 .auth-container{
     display: flex;
     gap:5px;
-    /* border:2px solid red; */
 }
 .link{
     text-decoration: none;
     color: white;
     padding: 0.2rem;
     cursor: pointer;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+.link:hover{
+    border-color: azure;
+    color: white;
 }

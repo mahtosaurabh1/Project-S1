@@ -3,12 +3,11 @@ import { CartState } from '../../store/cartcontext';
 import './cart.css'
 function Cart() {
   let [totalAmt,setTotalAmt]=useState(0);
-  let [loadedCart,loadedSetCart]=useState([]);
   let [filterCart,setfilterCart]=useState([]);
   let loginUser=localStorage.getItem('user');
   let {setCart,cart}=CartState();
 
-  const  fetchCartHandler = useCallback(async ()=>{
+  const  fetchCartHandler = async ()=>{
     try {
       let responce=await fetch('https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item.json');
       let  data=await responce.json();
@@ -23,9 +22,7 @@ function Cart() {
           user:data[key].user
         });
     }
-    loadedSetCart(loadCartItem);
       
-
       let filterArr=loadCartItem.filter((val)=>{
         return val.user === loginUser ;
       })
@@ -40,24 +37,24 @@ function Cart() {
       console.log(error);
     }
 
-  },[cart])
+  }
 
   useEffect(()=>{
     fetchCartHandler();
-  },[filterCart]);
+  },[]);
 
 let handleRemoveFromCart=async (id)=>{
-  // let nArrProducts=loadedCart.filter((val)=>{
-  //   return val.id !== id;
-  // })
-  // setCart(nArrProducts)
-
-  const response = await fetch(`https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item/${id}.json`, {
-            method: 'DELETE',
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          });
+   try {
+    const response = await fetch(`https://e-commerce-25ae3-default-rtdb.firebaseio.com/cart-item/${id}.json`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    fetchCartHandler();
+   } catch (error) {
+    console.log(error); 
+   }
    }
   return (
     <div className="cart-container">
