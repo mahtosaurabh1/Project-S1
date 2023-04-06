@@ -1,3 +1,37 @@
-.heading{
-    margin-top: 8rem;
+.head{
+    background-color: grey;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 6rem;
+    
+}
+.parent-header{
+    /* border: 2px solid red; */
+    margin-top: 6rem;
+}
+.list-item-container{
+    border: 2px solid #8a2b06;
+    width: 40%;
+    padding: 3rem;
+    border-radius: 5px;
+    margin-left: 23%;
+    color: black;
+    margin-top: 2rem;
+}
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.btn{
+    width: 6rem;
+    height: 1.2rem;
+    color: white;
+    background-color: grey;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
 }
