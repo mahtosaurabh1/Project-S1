@@ -12,26 +12,27 @@ function Header() {
   };
   return (
     <div className="header">
-      <h3>Expanse tracker</h3>
-      {user ? (
-        <>
-          <button><Link  className="Link" to="/expenses">Expenses</Link></button>
-         
-          <div>
-            
-            <Link to="/profile" className="Link">
-              <button> Profile</button>
-            </Link>
-            
+     <h3> <Link to='/' className="Link">Expanse tracker</Link></h3>
+      <div className="header-btn">
+        {user ? (
+          <div className="header-btn">
+            <button><Link className="Link" to="/expenses">
+              Expenses
+            </Link></button>
+           <button> <Link to="/profile" className="Link">
+              Profile
+            </Link></button>
+            <button onClick={logoutHandler}>Logout</button>
           </div>
-          <button onClick={logoutHandler}>Logout</button>
-        </>
-      ) : (
-        <>
-          <Link className="Link" to="/login"><button>Login</button></Link>
-          <Link  className="Link" to="/singup"><button className="Link">Create-One</button></Link>
-        </>
-      )}
+        ) : (
+          <div className="header-btn">
+           <button> <Link className="Link" to="/login">Login</Link></button>
+           <button> <Link className="Link" to="/singup">
+              Singup
+            </Link></button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

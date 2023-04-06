@@ -4,9 +4,9 @@
   justify-content: center;
   margin-top: 8rem;
   color: white;
-  background-color: violet;
+  background-color: #8a2b06;
   height: 3.5rem;
-  position: static;
+  position: fixed;
   width: 100%;
   bottom: 0px;
 }

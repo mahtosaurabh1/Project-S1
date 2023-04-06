@@ -2,8 +2,6 @@ import React from 'react'
 import './home.css'
 function Home() {
 
-  
-
   let arr= [1,2,3,4,5];
   return (
     <div>
@@ -16,9 +14,9 @@ function Home() {
          arr.map((val,i)=>{
           return(
             <div key={i} className='list-item'>
-              <span>{i+5} July</span>
+              <span>{i+10} July</span>
               <span>DTE ENERGY MUSIC THEATRE</span>
-              <button className='btn'>Buy Ticket</button>
+              <button className='btn'>Ticket</button>
             <br />
             </div>
           )

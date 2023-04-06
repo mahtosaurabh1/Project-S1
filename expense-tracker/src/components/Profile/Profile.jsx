@@ -101,6 +101,7 @@ function Profile() {
            })
     }
   return (
+    <div className='parent-profile-container'>
     <div className="profile">
         <h1>Profile</h1>
         <div className="name">
@@ -111,6 +112,7 @@ function Profile() {
         {currUser && <button onClick={()=>updateuserProfile(currUser)}>Update</button>}
         {!currUser && <button onClick={handleProfileName}>Add Name</button>}
         {!authCtx.verify  && <button onClick={verifyEmail}>Verify Email</button>}
+    </div>
     </div>
   )
 }

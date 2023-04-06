@@ -8,6 +8,7 @@ import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 import Expenses from "./components/Expenses/Expenses";
 import Home from "./components/Home/Home/Home";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/forget-password' element={<ForgetPassword/>}/>
         <Route path='/expenses' element={ <ProtectedRoute Component={Expenses}/>}/>
       </Routes>
+      <Footer/>
     </Router>
   );
 }

@@ -55,6 +55,7 @@ function Login() {
   };
 
   return (
+    <div className="parent-login-container">
     <div className="login">
       <h1>Login</h1>
       <div className="email">
@@ -83,6 +84,7 @@ function Login() {
 
       <button><Link className="Link" to="/forget-password">Forget Password</Link></button>
       </div>
+    </div>
     </div>
   );
 }
