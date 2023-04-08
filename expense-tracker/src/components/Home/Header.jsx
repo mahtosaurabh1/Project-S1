@@ -12,7 +12,7 @@ function Header() {
   };
   return (
     <div className="header">
-     <h3> <Link to='/' className="Link">Expanse tracker</Link></h3>
+     <h3> <Link to='/' className="Link">Expense tracker</Link></h3>
       <div className="header-btn">
         {user ? (
           <div className="header-btn">

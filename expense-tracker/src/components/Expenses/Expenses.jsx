@@ -146,16 +146,16 @@ function Expenses() {
     <div id="expenses-container">
         <div className="expenses">
             <div className="money">
-                <label htmlFor="">Money</label>
+                <div>Money</div>
                 <input type="text" value={money} onChange={(e)=>setMoney(e.target.value)} />
             </div>
             <div className="description">
-                <label htmlFor="">Description</label>
+                <div>Description</div>
                 <input type="text" value={description} onChange={(e)=>setDescription(e.target.value)}/>
             </div>
             <div className="category">
-                <label htmlFor="">Category</label>
-                <select value={category} onChange={(e)=>{setCategory(e.target.value)}}>
+                <div>Category</div>
+                <select  value={category} onChange={(e)=>{setCategory(e.target.value)}}>
                     <option value='movie'>Movie</option>
                     <option value='food'>Food</option>
                     <option value='travel'>Travel</option>
